@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title>{{ room.name }}</mat-card-title>
+  <mat-card-content>
+    <app-room-summary-content [count]="count$ | async" [operations]="operations$ | async" [answers]="answers$ | async"></app-room-summary-content>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button [routerLink]="['/rooms', room.id]" mat-button>PREVIEW</button>
+  </mat-card-actions>
+</mat-card>

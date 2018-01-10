@@ -1,0 +1,6 @@
+<button *ngIf="isAuthenticated" mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon aria-label="Account Information">account_circle</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="signOut()">Sign out</button>
+</mat-menu>

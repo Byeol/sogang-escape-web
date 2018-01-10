@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayoutWrap fxLayoutAlign="center center">
+  <div *ngFor="let room of rooms$ | async" fxFlex="0 0 45%" class="card-wrapper">
+    <app-room-summary [room]="room"></app-room-summary>
+  </div>
+</div>
