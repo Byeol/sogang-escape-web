@@ -1,0 +1,25 @@
+.wrapper {
+  margin: 0 15%;
+}
+
+mat-card {
+  margin-bottom: 24px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.operator-wrapper {
+  padding: 24px;
+}
+
+@media (max-width: 800px) {
+  mat-form-field {
+    max-width: 70px !important;
+  }
+
+  .operator-wrapper {
+    padding: 12px;
+  }
+}

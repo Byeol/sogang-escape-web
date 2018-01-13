@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex class="wrapper">
+    <form (ngSubmit)="onSubmit(roomForm)" #roomForm="ngForm">
+      <mat-card>
+        <mat-card-title>Hello, {{ data.name }}!</mat-card-title>
+        <mat-card-content>
+          <div *ngFor="let example of examples$ | async">
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field fxFlex="auto">
+                <input matInput type="number" disabled [value]="example.numberA">
+              </mat-form-field>
+              <div fxFlex="auto" class="operator-wrapper">
+                <span>?</span>
+              </div>
+              <mat-form-field fxFlex="auto">
+                <input matInput type="number" disabled [value]="example.numberB">
+              </mat-form-field>
+              <div fxFlex="auto" class="operator-wrapper">
+                <span>=</span>
+              </div>
+              <mat-form-field fxFlex="auto">
+                <input matInput type="number" disabled [value]="example.answer">
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field fxFlex="auto">
+                <input matInput type="number" name="numberA" ngModel required #stringA="ngModel" placeholder="Number A">
+              </mat-form-field>
+              <div fxFlex="auto" class="operator-wrapper">
+                <span>?</span>
+              </div>
+              <mat-form-field fxFlex="auto">
+                <input matInput type="number" name="numberB" ngModel required #stringB="ngModel" placeholder="Number B">
+              </mat-form-field>
+              <div fxFlex="auto" class="operator-wrapper">
+                <span>=</span>
+              </div>
+              <mat-form-field fxFlex="auto">
+                <input matInput disabled [(ngModel)]="answer" [ngModelOptions]="{standalone: true}" placeholder="Answer">
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button type="submit" mat-button>GET ANSWER</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    <app-answer-verify [room]="room"></app-answer-verify>
+  </div>
+</div>
